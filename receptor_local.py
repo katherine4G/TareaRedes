@@ -37,7 +37,7 @@ def recolectar_mensaje():
     msgFlag = True
 
     while msgFlag:
-        digito = interpretar_digito
+        digito = interpretar_digito()
         print(f"[RECEPTOR] Dato detectado: {digito}")
         if digito == 'F':
             return mensaje
@@ -50,10 +50,10 @@ print("[RECEPTOR] Escuchando continuamente... (Ctrl+C para detener)")
 
 try:
     while True:
-        digito = detectar_digito
+        digito = detectar_digito()
         print(f"[RECEPTOR] Dato detectado: {digito}")
         if digito == 'S':
-            mensaje = recolectar_mensaje
+            mensaje = recolectar_mensaje()
             print(f"[RECEPTOR] trama detectada: {mensaje}")        
 except KeyboardInterrupt:
     print("\n[RECEPTOR] Finalizado por el usuario.")

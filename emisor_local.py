@@ -70,7 +70,11 @@ def verificarMedio():
 
 #---------------------------------------------------------
 id = input("[EMISOR] Ingrese el ID del nodo: ")
+id += ','
+print(f"[EMISOR] ID de mi nodo: {id}")
 while True:
-    mensaje = input("[EMISOR] Ingrese el mensaje a enviar (números, punto y coma): ")
+    temp = input("[EMISOR] Ingrese la temperatura a enviar (números y punto): ")
+    mensaje = "S," + id + temp + ",F"
+    print(f"[EMISOR] ID de mi nodo: {mensaje}")
     verificarMedio()
     enviarMensaje(mensaje)
